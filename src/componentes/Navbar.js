@@ -11,10 +11,10 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/create">Create <span className="sr-only">(current)</span></NavLink>
+                        <NavLink className="nav-link" to="/create">Agregar<span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/about">About</NavLink>
+                        <NavLink className="nav-link" to="/about">Acerca de</NavLink>
                     </li>
                     
                 </ul>

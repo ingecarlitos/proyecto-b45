@@ -46,11 +46,12 @@ const Main = () => {
         <div>
             <main className="background">
                 <div className="container">
-                <h1 className= "text-light">Negocios </h1>
+                <h1 className= "text-dark-50">Negocios </h1>
                 {
                     Object.keys(negocios).map(identificador => {
                        return (
-                        <Negocio
+                        <Negocio 
+                                         
                         nombre={negocios[identificador].nombre}
                         categoria={negocios[identificador].categoria}
                         horario={negocios[identificador].horario}
