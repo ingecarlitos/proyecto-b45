@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-const CreateNegocio = (props) => {
-    const { createNegocio } = props;
+const UpdateNegocio = (props) => {
+    const { updateNegocio } = props;
 
     const [nombre, setNombre] = useState('');
     const [horario, setHorario] = useState('');
@@ -32,7 +32,7 @@ const CreateNegocio = (props) => {
 
     const submitForm = () => {
         if (nombre !== '' && horario !== '' && categoria !== '' && contacto !== '' && telefono !== '' && redes !== '') {
-            createNegocio(nombre, horario, categoria,  contacto, telefono, redes);
+            updateNegocio(nombre, horario, categoria,  contacto, telefono, redes);
         } else {
             alert('Los campos deben de contener información.');
         }
@@ -66,10 +66,10 @@ const CreateNegocio = (props) => {
                     <label htmlFor="redes">Redes</label>
                     <input onChange={redesHandler} type="text" className="form-control bg-transparent" id="redes" />
                 </div>
-                <button onClick={() => submitForm()} className="btn btn-primary">Agregar</button>
+                <button onClick={() => submitForm()} className="btn btn-primary">Modificar</button>
             </div>
         </div>
     )
 }
 
-export default CreateNegocio
+export default UpdateNegocio

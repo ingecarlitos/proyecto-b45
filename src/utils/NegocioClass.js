@@ -1,9 +1,9 @@
 class NegocioClass {
-    constructor(nombre, categoria, horario, contacto, telefono, redes, id) {
+    constructor(nombre, horario, categoria, contacto, telefono, redes, id) {
       this[id] = {
         nombre: nombre,
-        categoria: categoria,
         horario: horario,
+        categoria: categoria,
         contacto: contacto,
         telefono: telefono,
         redes: redes

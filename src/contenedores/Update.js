@@ -1,18 +1,18 @@
 import React from 'react'
-import CreateNegocio from '../componentes/CreateNegocio';
+import UpdateNegocio from '../componentes/UpdateNegocio';
 import { NegocioClass } from '../utils/NegocioClass';
 import axios from 'axios';
 import { useHistory} from 'react-router-dom';
 
-const Create = () => {
+const Update = () => {
 
     const history = useHistory();
 
-    const createNegocio = (nombre, horario, categoria, contacto, telefono, redes) => {
+    const updateNegocio = (nombre, horario, categoria, contacto, telefono, redes, key) => {
         const URL = 'https://dba-eats.firebaseio.com/negocio.json';
-        const newNegocio = new NegocioClass(nombre, horario, categoria, contacto, telefono, redes, 'a')
+        const updateNegocio = new NegocioClass(nombre, horario, categoria, contacto, telefono, redes, key)
 
-        axios.post(URL, newNegocio.a)
+        axios.patch(URL, updateNegocio.key)
         .then(history.push('/'))
         .catch(error => alert(error))
 
@@ -22,8 +22,8 @@ const Create = () => {
         <div>
             <main className="background">
                 <div className="container">
-                    <h1>Agregar Negocio</h1>
-                    <CreateNegocio createNegocio = {createNegocio}/>
+                    <h1>Modificar Negocio</h1>
+                    <UpdateNegocio updateNegocio = {updateNegocio}/>
                 </div>
             </main>
 
@@ -31,4 +31,4 @@ const Create = () => {
     )
 }
 
-export default Create
+export default Update
